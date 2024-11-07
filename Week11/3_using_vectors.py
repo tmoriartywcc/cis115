@@ -61,10 +61,10 @@ class Player(pygame.sprite.Sprite):
     def update(self):
 
         #Set the accleration vector to (0, 0) so there is initially no acceleration
-        #If there is no force (no key presses) acting on the player then accerlation should be 0
+        #If there is no force (no key presses) acting on the player then acceleration should be 0
         self.acceleration = vector(0, 0)
 
-        #If the user is presseing a key, set the x-component of the accleration vector to a non zero value.
+        #If the user is presseing a key, set the x-component of the acceleration vector to a non zero value.
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.acceleration.x = -1*self.HORIZONTAL_ACCELERATION
