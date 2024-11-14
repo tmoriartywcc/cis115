@@ -113,7 +113,7 @@ class Player(pygame.sprite.Sprite):
         #Vertical accelration (gravity) is present always regardless of key-presses
         self.acceleration = vector(0, self.VERTICAL_ACCLERATION)
 
-        #If the user is presseing a key, set the x-component of the accleration vector to a non zero value.
+        #If the user is presseing a key, set the x-component of the acceleration vector to a non zero value.
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.acceleration.x = -1*self.HORIZONTAL_ACCELERATION
@@ -132,6 +132,9 @@ class Player(pygame.sprite.Sprite):
         self.acceleration.x -= self.velocity.x*self.HORIZONTAL_FRICTION
         self.velocity += self.acceleration
         self.position += self.velocity + 0.5*self.acceleration
+
+        #print out vectors to console for learning / debugging
+        print('accel:', self.acceleration, 'vel:', self.velocity, 'pos:', self.position)
 
         #Update new rect based on kinematic calculations and add wrap around motion
         if self.position.x < 0:
