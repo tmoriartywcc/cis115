@@ -33,16 +33,12 @@ class Game():
         self.round_number = 1
         self.frame_count = 0
         self.round_time = self.STARTING_ROUND_TIME
-        self.zombie_creation_time = self.STARTING_ZOMBIE_CREATION_TIME
+
 
         #Set fonts
         self.title_font = pygame.font.Font("fonts/Poultrygeist.ttf", 48)
         self.HUD_font = pygame.font.Font("fonts/Pixel.ttf", 24)
 
-        #Set sounds
-        self.lost_ruby_sound = pygame.mixer.Sound("sounds/lost_ruby.wav")
-        self.ruby_pickup_sound = pygame.mixer.Sound("sounds/ruby_pickup.wav")
-        pygame.mixer.music.load("sounds/level_music.wav")
 
     def update(self):
         """Update the game"""
